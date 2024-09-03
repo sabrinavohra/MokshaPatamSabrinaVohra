@@ -19,7 +19,7 @@ public class MokshaPatam {
         // Creates board
         int board[][] = new int[boardsize/10][10];
         for(int i = 0; i < board.length; i++) {
-            for(int j = 0; j < board[0].length; j++) {
+            for(int j = 0; j < board[0].length; j++ ) {
                 // Iterate through board and add ladders and snakes where applicable
             }
         }
