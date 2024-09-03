@@ -29,12 +29,15 @@ public class MokshaPatam {
             i++;
             j++;
         }
+        // If no solution:
         return -1;
+        // Make limit for if the roll rolls past the final square (ex. cannot roll 6 on square 95)
     }
 }
 
-// Ideas
+// Ideas:
     // Start from the end like Maze Solver and find the quickest route back to the beginning
-        // Keep track of how much each roll is depending on where the snakes and ladders are - don't necessarily roll 6 every time
+        // Decide whether to take each square and follow each route cancelling out the higher numbers until a conclusion is reached
+
     // Work from the beginning and move through trying every outcome using recursion and printing the lowest one
-    // Document which ladder is the longest to make sure to take it
+    // Document which ladder is the longest and make sure to take it
