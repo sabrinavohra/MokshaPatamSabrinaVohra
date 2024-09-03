@@ -17,7 +17,7 @@ public class MokshaPatam {
     // What does "the first of the two integers leads to the next" mean?
     public static int fewestMoves(int boardsize, int[][] ladders, int[][] snakes) {
         // Creates board
-        int board[][] = new int[boardsize/10][10];
+        int board[][] = new int[boardsize/10][10] ;
         for(int i = 0; i < board.length; i++) {
             for(int j = 0; j < board[0].length; j++ ) {
                 // Iterate through board and add ladders and snakes where applicable
