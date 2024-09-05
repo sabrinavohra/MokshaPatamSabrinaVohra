@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Moksha Patam
  * A puzzle created by Zach Blick
@@ -16,11 +19,34 @@ public class MokshaPatam {
     // How do we know how long / wide the board is if we only have the size?
     // What does "the first of the two integers leads to the next" mean?
     public static int fewestMoves(int boardsize, int[][] ladders, int[][] snakes) {
+        Queue<Integer> toExplore = new LinkedList<>();
+        toExplore.add(1);
+        int currentNode;
+        int[] numRolls = new int[boardsize + 1];
+        int[] laddersMap = new int[boardsize + 1];
+        for(int i = 0; i < ladders.length; i++) {
+            int start = ladders[i][0];
+            int end = ladders[i][1];
+            laddersMap[start] = end;
+        }
+        int[] snakesMap = new int[boardsize + 1];
+        while(!toExplore.isEmpty()) {
+            currentNode = toExplore.remove();
+            if(currentNode == boardsize) {
+                return numRolls[currentNode];
+            }
+            for(int r = 1; r <= 6; r++) {
+                int node = currentNode + r;
+                if()
+            }
+        }
+
         // Creates board
         int board[][] = new int[boardsize/10][10];
         for(int i = 0; i < board.length; i++) {
             for(int j = 0; j < board[0].length; j++ ) {
                 // Iterate through board and add ladders and snakes where applicable
+
             }
         }
         // Iterates through board
