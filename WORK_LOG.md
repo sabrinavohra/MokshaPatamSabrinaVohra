@@ -10,6 +10,7 @@ Name: Sabrina Vohra
 | 9/05 |  11:25-11:55am   |                                                                                                                  Worked through beginning of people: created queue, started exploring node, and started created ladders map. |
 | 9/05 |  7:30 - 7:55pm   |                                                                                 I worked through the pseudocode. I created maps and worked through the process of checking for snakes and ladders and already visited nodes. |
 | 9/06 |   1:50-1:55pm    |                                                                                                                                                    Added return statement and started debugging out of bounds error for map. |
+| 9/06 |  2:05 - 2:35pm   |                                                                                  I asked Mr. Blick for help with an out of bounds error, and used the debugger to sort out the other issues I was having when running tests. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

@@ -42,18 +42,21 @@ public class MokshaPatam {
                 return numRolls[currentNode];
             }
             for (int r = 1; r <= 6; r++) {
-                int node = currentNode + r;
-                if (laddersMap[node] > 0) {
-                    node = laddersMap[node];
-                } else if (snakesMap[node] > 0) {
-                    node = snakesMap[node];
+                if(currentNode + r <= boardsize) {
+                    int node = currentNode + r;
+                    if (laddersMap[node] > 0) {
+                        node = laddersMap[node];
+                    }
+                    else if (snakesMap[node] > 0) {
+                        node = snakesMap[node];
+                    }
+                    if (numRolls[node] == 0) {
+                        numRolls[node] = rolls;
+                        toExplore.add(node);
+                    }
                 }
-                if (numRolls[node] == 0) {
-                    numRolls[node] = rolls;
-                    toExplore.add(node);
-                }
-                rolls++;
             }
+            rolls++;
         }
         return 0;
     }
