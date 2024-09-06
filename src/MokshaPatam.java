@@ -23,6 +23,7 @@ public class MokshaPatam {
         toExplore.add(1);
         int currentNode;
         int[] numRolls = new int[boardsize + 1];
+        int rolls = 0;
         int[] laddersMap = new int[boardsize + 1];
         for(int i = 0; i < ladders.length; i++) {
             int start = ladders[i][0];
@@ -30,6 +31,11 @@ public class MokshaPatam {
             laddersMap[start] = end;
         }
         int[] snakesMap = new int[boardsize + 1];
+        for(int i = 0; i < snakes.length; i++) {
+            int start = snakes[i][0];
+            int end = snakes[i][i];
+            snakesMap[start] = end;
+        }
         while(!toExplore.isEmpty()) {
             currentNode = toExplore.remove();
             if(currentNode == boardsize) {
@@ -37,7 +43,17 @@ public class MokshaPatam {
             }
             for(int r = 1; r <= 6; r++) {
                 int node = currentNode + r;
-                if()
+                if(laddersMap[node] != 0) {
+                    node = laddersMap[node];
+                }
+                else if (snakesMap[node] != 0) {
+                    node = snakesMap[node];
+                }
+                if(numRolls[node] == 0) {
+                    numRolls[node] = rolls;
+                    toExplore.add(node);
+                }
+                rolls++;
             }
         }
 
