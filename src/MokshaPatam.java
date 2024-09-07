@@ -54,6 +54,9 @@ public class MokshaPatam {
                         numRolls[node] = rolls;
                         toExplore.add(node);
                     }
+                    if(rolls >(node /6)) {
+                        rolls --;
+                    }
                 }
             }
             rolls++;
