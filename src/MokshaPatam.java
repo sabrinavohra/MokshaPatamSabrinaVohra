@@ -42,7 +42,7 @@ public class MokshaPatam {
                 return numRolls[currentNode];
             }
             for (int r = 1; r <= 6; r++) {
-                if(currentNode + r <= boardsize) {
+                if((currentNode + r) <= boardsize) {
                     int node = currentNode + r;
                     if (laddersMap[node] > 0) {
                         node = laddersMap[node];
@@ -54,8 +54,8 @@ public class MokshaPatam {
                         numRolls[node] = rolls;
                         toExplore.add(node);
                     }
-                    if(rolls >(node /6)) {
-                        rolls --;
+                    if(rolls > (node / 6)) {
+                        rolls--;
                     }
                 }
             }
