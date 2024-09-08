@@ -12,7 +12,7 @@ Name: Sabrina Vohra
 | 9/06 |   1:50-1:55pm    |                                                                                                                                                        Added return statement and started debugging out of bounds error for map. |
 | 9/06 |  2:05 - 2:35pm   |                                                                                      I asked Mr. Blick for help with an out of bounds error, and used the debugger to sort out the other issues I was having when running tests. |
 | 9/07 | 9:45 - 10:10 am  | Uncovered problem with rolls increasing - they are increasing too frequently because the node is always the lowest value which means adding 6 to it will have an increased roll. Tried to fix problem by adding an if statement. |
-| 9/08 | 12:00 - 12:00pm  |                                                                                                                                                                                              Tried to debug the number of rolls. |
+| 9/08 | 12:00 - 12:00pm  |                                                                                                               Tried to debug the number of rolls, still one or two off - not sure where to implement when rolls should increase. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
