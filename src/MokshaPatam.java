@@ -48,23 +48,19 @@ public class MokshaPatam {
                     // Checks to see if node is the beginning of a ladder or a snake
                     if (laddersMap[node] > 0) {
                         node = laddersMap[node];
-                    } else if (snakesMap[node] > 0) {
+                    }
+                    else if (snakesMap[node] > 0) {
                         node = snakesMap[node];
                     }
-                    // Stores number of rolls at node and adds node to queue
+                    // Stores number of rolls at node and adds node to queue to explore later
                     if (numRolls[node] == 0) {
-                        numRolls[node] = rolls;
+                        numRolls[node] = numRolls[currentNode] + 1;
                         toExplore.add(node);
-                    }
-                    // Makes sure rolls are lowest
-                    if((node / 6) < rolls) {
-                        rolls--;
                     }
                 }
             }
-            rolls++;
         }
-        // Returns 0 if code fails
-        return 0;
+        // Returns -1 if board is unsolvable
+        return -1;
     }
 }
