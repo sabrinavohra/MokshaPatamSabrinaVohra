@@ -51,14 +51,15 @@ public class MokshaPatam {
                     } else if (snakesMap[node] > 0) {
                         node = snakesMap[node];
                     }
+                    // Stores number of rolls at node and adds node to queue
                     if (numRolls[node] == 0) {
                         numRolls[node] = rolls;
                         toExplore.add(node);
                     }
+                    // Makes sure rolls are lowest
                     if((node / 6) < rolls) {
                         rolls--;
                     }
-
                 }
             }
             rolls++;
