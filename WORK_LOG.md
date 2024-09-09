@@ -14,6 +14,7 @@ Name: Sabrina Vohra
 | 9/07 | 9:45 - 10:10 am  | Uncovered problem with rolls increasing - they are increasing too frequently because the node is always the lowest value which means adding 6 to it will have an increased roll. Tried to fix problem by adding an if statement. |
 | 9/08 | 12:00 - 12:10pm  |                                                                                                               Tried to debug the number of rolls, still one or two off - not sure where to implement when rolls should increase. |
 | 9/08 |  9:50- 10:20pm   |                                                                                                                                                                            I tried to debug my problem with the number of rolls. |
+| 9/08 |  10:20-10:50pm   |                                                                              I tried different strategies to get the number of rolls to work, but I can't figure it out. I added comments to the parts of the code that do work. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.

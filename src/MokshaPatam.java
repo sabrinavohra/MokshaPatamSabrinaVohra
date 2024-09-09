@@ -12,16 +12,15 @@ import java.util.Queue;
  */
 
 public class MokshaPatam {
-    /**
-     * TODO: Complete this function, fewestMoves(), to return the minimum number of moves
-     *  to reach the final square on a board with the given size, ladders, and snakes.
-     */
     public static int fewestMoves(int boardsize, int[][] ladders, int[][] snakes) {
+        // Creates queue and adds first value to it
         Queue<Integer> toExplore = new LinkedList<>();
         toExplore.add(1);
         int currentNode;
         int rolls = 0;
+        // Creates array to keep track of the number of rolls
         int[] numRolls = new int[boardsize + 1];
+        // Creates maps to hold values of ladders and snakes
         int[] laddersMap = new int[boardsize + 1];
         for (int[] ladder : ladders) {
             int start = ladder[0];
@@ -34,31 +33,37 @@ public class MokshaPatam {
             int end = snake[1];
             snakesMap[start] = end;
         }
+        // Moves through while loop until queue is empty
         while (!toExplore.isEmpty()) {
             currentNode = toExplore.remove();
+            // Returns number of rolls if the end of the board is reached
             if (currentNode >= boardsize) {
                 return numRolls[currentNode];
             }
+            // Moves through array to add values to queue
             for (int r = 1; r <= 6; r++) {
-                if((currentNode + r) <= boardsize) {
+                // Makes sure end isn't reached
+                if ((currentNode + r) <= boardsize) {
                     int node = currentNode + r;
+                    // Checks to see if node is the beginning of a ladder or a snake
                     if (laddersMap[node] > 0) {
                         node = laddersMap[node];
-                    }
-                    else if (snakesMap[node] > 0) {
+                    } else if (snakesMap[node] > 0) {
                         node = snakesMap[node];
                     }
                     if (numRolls[node] == 0) {
                         numRolls[node] = rolls;
                         toExplore.add(node);
                     }
-//                    if (rolls > (node / 6)) {
-//                        rolls--;
-//                    }
+                    if((node / 6) < rolls) {
+                        rolls--;
+                    }
+
                 }
             }
             rolls++;
         }
+        // Returns 0 if code fails
         return 0;
     }
 }
